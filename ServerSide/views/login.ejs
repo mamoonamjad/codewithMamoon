@@ -1,0 +1,23 @@
+<% include('head') %>
+
+<div class="back">
+<div class="text-center centre-div" id="login">
+<div class="container w-25 border py-5" >
+    <h1 class="text-center">Login Here</h1>
+    <span>Don't have an account?  <a href="/user/sign-up"> Sign Up</a></span>
+    <form action="/auth/login" method="POST">
+        <div class="form-group text-left">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter email">
+        </div>
+        <div class="form-group text-left">
+            <label for="password">Password: </label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+</div>
+</div>
+
+<% include('end') %>

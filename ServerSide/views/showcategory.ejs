@@ -1,0 +1,17 @@
+<% include('head') %>
+<div class="category-color ">
+<div class="shadow-lg p-3 mb-5 bg-body rounded">
+    <h1>CATEGORIES:</h1>
+</div>
+<% for (let i=0;i<categories.length;i++){%>
+    <div class="shadow p-3 mb-5 bg-body rounded">
+        <a href="/add-product/<%= categories[i]._id %>"><h4><%= categories[i].name %> </h4></a>
+        <p><%= categories[i].description %></p>
+    </div>
+<%}%>
+</div>
+<% include('end') %>
+
+
+
+
