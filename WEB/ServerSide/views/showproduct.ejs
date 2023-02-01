@@ -1,0 +1,31 @@
+<% include('head') %>
+
+<!-- <div class="category-color "> -->
+<div class="shadow-lg p-3 mb-5 bg-body rounded">
+        <h1>Products:</h1>
+</div>
+
+<div class="container">
+<div class="row">
+<% for (let i=0;i<products.length;i++) {%>
+    <div class="col col-lg-3">
+        <div class="card">
+                <div class="card-body">
+                    <div class="d-flex justify-content-end">
+                        <a class="prod-btn" href="/delete/<%= products[i]._id %>"><i class="bi bi-trash3"></i></a> 
+                        <a href="/edit/<%= products[i]._id %>"><i class="bi bi-pencil-square"></i></a> 
+                    </div>
+
+                     <img class="img-fluid" src="<%= products[i].image %>" alt="">
+                     <h4 class="card-title">Name: <%= products[i].name %></h4>
+                    <p class="card-text">Description:<%= products[i].description.substr(0,5).concat('...') %>
+                    <br>
+                    Price: <%= products[i].price %>
+                    </p>    
+                </div>
+        </div>
+    </div>
+<%}%>
+</div>
+</div>
+<% include('end') %>

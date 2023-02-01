@@ -1,0 +1,12 @@
+.expense-filter{
+    padding:2%;
+    background-color: rgb(82, 11, 102);
+}
+.options{
+    float: right;
+    padding-right: 2%;
+}
+.text{
+    font-weight: 600;
+    color: aliceblue;
+}

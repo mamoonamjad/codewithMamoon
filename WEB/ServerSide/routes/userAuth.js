@@ -17,13 +17,13 @@ router.post('/register',async(req,res)=>{
   user.name= req.body.name;
   user.email = req.body.email;
   let hashpassword = await bcrypt.hash(req.body.password,12)
-  let confirmpassword = await bcrypt.hash(req.body.confirmPassword,12)
+  let confirmpassword = await bcrypt.hash(req.body.confirmPassword,12);
 
   user.password = hashpassword;
   user.confirmPassword = confirmpassword;
 
   await user.save();
-  res.send("User Created")
+  res.redirect('/user/sign-in')
 })
 
 
@@ -39,7 +39,6 @@ router.post('/login',async(req,res)=>{
   }
   let token = jwt.sign({_id:user._id},config.get("jwt"));
   res.cookie('token',token,{expires:new Date(Date.now()+10000000)})
-
   res.send(token);
 })
 

@@ -1,3 +1,4 @@
 {
-    "jwt":"SomePrivateKey"
+    "jwt":"SomePrivateKey",
+    "secretKey":"VictoriaSecret"
 }

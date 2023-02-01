@@ -1,0 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#contain{
+    background-color: black;
+    padding: 0.5rem;;
+}
+.logo{
+    padding-top: 0.5%;
+}
+.search{
+    padding-top: 0.5%;
+}

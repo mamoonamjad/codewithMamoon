@@ -1,0 +1,27 @@
+.container-form{
+  display: flex;
+  flex-wrap: nowrap;  
+  justify-content: space-around;
+}
+.title{
+    font-size: 150%;
+    font-weight: 500;
+    padding-right: 0.5rem;
+    color: white;
+}
+.field{
+   height: 30px;
+   width: 100%;; 
+}
+.btn-div{
+    padding-top: 1.5%;
+}
+.submit_btn{
+height:40px;
+width: 120px;
+background-color: rgb(255, 217, 0);
+padding:2%;
+border-radius: 10px;
+font-weight: 200;
+color: rgb(0, 61, 115);
+}

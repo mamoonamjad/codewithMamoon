@@ -4,8 +4,9 @@
     <h1>CATEGORIES:</h1>
 </div>
 <% for (let i=0;i<categories.length;i++){%>
-    <div class="shadow p-3 mb-5 bg-body rounded">
-        <a href="/add-product/<%= categories[i]._id %>"><h4><%= categories[i].name %> </h4></a>
+    <div class="shadow p-3 bg-body rounded">
+        <a href="/add-product/<%= categories[i]._id %>">
+        <h4><%= categories[i].name %> </h4></a>
         <p><%= categories[i].description %></p>
     </div>
 <%}%>

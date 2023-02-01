@@ -1,0 +1,10 @@
+.container_form{
+    background-color: rgb(66, 13, 66);
+    padding: 2%;  
+}
+
+.formDisplay{
+    background-color: rgb(255, 213, 0);
+    padding: 1%;
+    border: 3px solid red;
+}

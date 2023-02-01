@@ -1,0 +1,11 @@
+.container{
+    display: flex;
+}
+
+.btn{
+    flex-direction: row;
+}
+
+.red{
+    border: 1px solid red;
+}

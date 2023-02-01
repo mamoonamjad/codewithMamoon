@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 76 76">
+  <defs>
+    <style>.cls-1{fill:#fff;}.cls-2{fill:#4dbdeb;}.cls-3{fill:#00405c;}.cls-4{fill:#0075a8;}.cls-5{fill:#ffd262;}</style>
+  </defs>
+  <title>GettingStarted</title>
+  <g id="Artboards">
+    <g id="Full_Color" data-name="Full Color">
+      <g id="Getting_Started" data-name="Getting Started">
+        <g id="Container">
+          <circle id="Background" class="cls-1" cx="38" cy="38" r="31"></circle>
+          <path id="Circle" class="cls-2" d="M38,10A28,28,0,1,1,10,38,28,28,0,0,1,38,10m0-2A30,30,0,1,0,68,38,30,30,0,0,0,38,8Z"></path>
+        </g>
+        <g id="Illustration">
+          <g id="Book">
+            <g id="Outline">
+              <path id="Right" class="cls-3" d="M50,28a6,6,0,0,0-5,2.7A6,6,0,0,0,40,28H28v2H40a4,4,0,0,1,4,4V65.35c.68-.15,1.34-.32,2-.52V34a4,4,0,0,1,4-4H64.83c-.2-.68-.43-1.34-.68-2Z"></path>
+              <path id="Left" class="cls-3" d="M18,30h2V28H16V55.29a28.86,28.86,0,0,0,2,2.28Z"></path>
+            </g>
+            <g id="Right-2" data-name="Right">
+              <path id="Row-08" class="cls-4" d="M49.5,62a.5.5,0,0,0,0,1h1.09c.61-.31,1.22-.64,1.81-1Z"></path>
+              <path id="Row-07" class="cls-4" d="M49.5,58a.5.5,0,0,0,0,1h7c.37-.32.73-.66,1.08-1Z"></path>
+              <path id="Row-06" class="cls-4" d="M49.5,54a.5.5,0,0,0,0,1H60.23c.25-.33.49-.66.73-1Z"></path>
+              <path id="Row-05" class="cls-4" d="M49.5,50a.5.5,0,0,0,0,1H62.79c.17-.33.34-.66.5-1Z"></path>
+              <path id="Row-04" class="cls-4" d="M49.5,46a.5.5,0,0,0,0,1h15c.11-.33.22-.66.32-1Z"></path>
+              <path id="Row-03" class="cls-4" d="M49.5,42a.5.5,0,0,0,0,1h16c.06-.33.12-.66.17-1Z"></path>
+              <path id="Row-02" class="cls-4" d="M49.5,38a.5.5,0,0,0,0,1H66c0-.33,0-.66,0-1Z"></path>
+              <path id="Row-01" class="cls-4" d="M49.5,34a.5.5,0,0,0,0,1H65.84c0-.34-.08-.67-.13-1Z"></path>
+            </g>
+            <g id="Left-2" data-name="Left">
+              <path id="Row-08-2" data-name="Row-08" class="cls-4" d="M41,62.5a.5.5,0,0,0-.5-.5H23.6c.59.36,1.2.69,1.81,1H40.5A.5.5,0,0,0,41,62.5Z"></path>
+              <path id="Row-07-2" data-name="Row-07" class="cls-4" d="M40.5,59h-19a.5.5,0,0,1,0-1h19a.5.5,0,0,1,0,1Z"></path>
+              <path id="Row-06-2" data-name="Row-06" class="cls-4" d="M40.5,55h-19a.5.5,0,0,1,0-1h19a.5.5,0,0,1,0,1Z"></path>
+              <path id="Row-05-2" data-name="Row-05" class="cls-4" d="M40.5,50H28v1H40.5a.5.5,0,0,0,0-1Z"></path>
+              <path id="Row-04-2" data-name="Row-04" class="cls-4" d="M40.5,46H28v1H40.5a.5.5,0,0,0,0-1Z"></path>
+              <path id="Row-03-2" data-name="Row-03" class="cls-4" d="M40.5,42H28v1H40.5a.5.5,0,0,0,0-1Z"></path>
+              <path id="Row-02-2" data-name="Row-02" class="cls-4" d="M40.5,38H28v1H40.5a.5.5,0,0,0,0-1Z"></path>
+              <path id="Row-01-2" data-name="Row-01" class="cls-4" d="M40.5,34H28v1H40.5a.5.5,0,0,0,0-1Z"></path>
+            </g>
+            <polygon id="Bookmark" class="cls-5" points="21 51.84 23.4 50.03 24.02 49.56 24.62 50.05 27 51.93 27 28 21 28 21 51.84"></polygon>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,11 @@
+{
+  "name": "mamoon-calculator",
+  "version": "1.0.0",
+  "description": "This contains Sum,Subtract,Multiply",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mamoon Amjad",
+  "license": "ISC"
+}

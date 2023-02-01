@@ -10,7 +10,8 @@ const userRouter = require('./routes/user')
 const categoryRouter = require('./routes/API/category')
 const navigation = require('./routes/navigation')
 const mongoose = require('mongoose');
-
+const session = require('express-session');
+const config = require('config');
 
 var app = express();
 
@@ -23,16 +24,20 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(expressLayout);
-
+app.use(session({
+  secret: config.get("secretKey"),
+  resave: false,
+  saveUninitialized: false,
+}));
+app.use((req,res,next)=>{
+  res.locals.user = req.session.user;
+  next();
+})
 app.use('/api/products', productRouter);
 app.use('/api/category', categoryRouter);
 app.use('/auth', userAuth);
 app.use('/user', userRouter);
 app.use('/', navigation);
-
-
-
-
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
