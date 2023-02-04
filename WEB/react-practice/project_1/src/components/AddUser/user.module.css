@@ -1,0 +1,19 @@
+.users {
+    margin:auto;
+    width: 90%;
+    max-width: 40rem;
+  }
+  
+  .users ul {
+    list-style: none;
+    padding: 1.5rem;
+  }
+  
+  .users li {
+    border: 2px solid #b40000;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+  }
+  .head{
+    color: #2e0000;
+  }
