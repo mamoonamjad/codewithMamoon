@@ -5,6 +5,7 @@ import CartContext from "../Store/CartContext";
 import CartItem from "./CartItem";
 import Checkout from "./Checkout";
 import axiosInstance from "../../BaseUrl/axios"
+import axios from "axios";
 
 const Cart = (props) => {
 
@@ -40,10 +41,23 @@ const Cart = (props) => {
         }
 
         const orderHandler =(userData) =>{
-            axiosInstance.post('/order.json', {
-                // user:userData,
-                // order: cartCtx.items
-            }).then(console.log("SENT"))
+            console.log(cartCtx.items)
+
+            axios.post('/order.json',{
+                OrderItem:cartCtx.items
+            })
+            .then(console.log("SENT"));      
+
+            // fetch('https://fooddelivery-62a38-default-rtdb.firebaseio.com/order.json',{
+            //     method:'POST',
+            //     body:JSON.stringify({
+            //         user:userData,
+            //         orderedItem:cartCtx.items
+            //     }),
+            //     headers:{
+            //         'Content-Type' : 'application/json'
+            //     }
+            // })
         }
 
     return ( 

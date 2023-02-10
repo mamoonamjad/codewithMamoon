@@ -41,11 +41,11 @@ const Checkout = (props) => {
             })
         }
     }
-
+    console.log(props)
 
     return ( 
-        <form>
-            <div className={classes.control} onSubmit={checkoutHandler}>
+        <form onSubmit={checkoutHandler}>
+            <div className={classes.control} >
             <label htmlFor="label" className={classes.controllabel}>Full Name:: </label>
                 <input type="text" id="label"/>
             </div>
@@ -62,7 +62,7 @@ const Checkout = (props) => {
                 <input type="text" id="postal" />
             </div>
             <div className={classes.actions}>
-            <button className={classes.submit}>Confirm</button>
+            <button className={classes.submit} onClick={props.onOrderClick}>Confirm</button>
             <button onClick={props.onCancel}>Cancel</button>
             </div>
         </form>
