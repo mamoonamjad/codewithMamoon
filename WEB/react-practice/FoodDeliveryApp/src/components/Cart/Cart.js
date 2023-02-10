@@ -3,9 +3,9 @@ import classes from './Cart.module.css'
 import Modal from "../UI/Modal";
 import CartContext from "../Store/CartContext";
 import CartItem from "./CartItem";
-import Checkout from "./Checkout";
-import axiosInstance from "../../BaseUrl/axios"
+import axiosInstance from "../BaseUrl/axios";
 import axios from "axios";
+import Checkout from "./Checkout";
 
 const Cart = (props) => {
 
@@ -40,24 +40,12 @@ const Cart = (props) => {
             setIsCheckout(true)
         }
 
-        const orderHandler =(userData) =>{
-            console.log(cartCtx.items)
+        const orderHandler = () =>{
 
-            axios.post('/order.json',{
-                OrderItem:cartCtx.items
+            axiosInstance.post('order.json',{
+                OrderedItem:cartCtx.items
             })
-            .then(console.log("SENT"));      
-
-            // fetch('https://fooddelivery-62a38-default-rtdb.firebaseio.com/order.json',{
-            //     method:'POST',
-            //     body:JSON.stringify({
-            //         user:userData,
-            //         orderedItem:cartCtx.items
-            //     }),
-            //     headers:{
-            //         'Content-Type' : 'application/json'
-            //     }
-            // })
+            .then(console.log("Hit Sent"));      
         }
 
     return ( 
@@ -68,7 +56,7 @@ const Cart = (props) => {
                 <span>Total Amount</span>
                 <span>{Amount}</span>
             </div>
-            {isCheckout && <Checkout onCacnel={props.onHideCart} onOrderClick={orderHandler}/>}
+            {isCheckout && <Checkout onCacnel={props.onHideCart} onConfirm={orderHandler}/>}
             {!isCheckout &&
             <div className={classes.actions}>
                 <button className={classes['button--alt']} onClick={props.onHideCart}>Close</button>

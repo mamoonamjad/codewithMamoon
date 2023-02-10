@@ -2,7 +2,7 @@ import React,{useEffect,useState} from "react";
 import classes from './AvailableMeals.module.css'
 import Card from "../UI/Card";
 import MealItem from "./MealItem/MealItem";
-import axios from "../../BaseUrl/axios";
+import axios from "../BaseUrl/axios";
 
 const AvailableMeals = () => {
 const[meals,setMeals] = useState([]);
