@@ -1,10 +1,15 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import classes from './Cart.module.css'
 import Modal from "../UI/Modal";
 import CartContext from "../Store/CartContext";
 import CartItem from "./CartItem";
+import Checkout from "./Checkout";
+import axiosInstance from "../../BaseUrl/axios"
 
 const Cart = (props) => {
+
+    const [isCheckout,setIsCheckout] = useState(false)
+    
     const cartCtx = useContext(CartContext);
     const Amount = `${cartCtx.totalAmount?.toFixed(2)}`;
     console.log(Amount);
@@ -30,8 +35,16 @@ const Cart = (props) => {
         onAdd={addingToCart.bind(null,item)}
         />)}</ul> 
 
+        const onOrder = ()=>{
+            setIsCheckout(true)
+        }
 
-
+        const orderHandler =(userData) =>{
+            axiosInstance.post('/order.json', {
+                // user:userData,
+                // order: cartCtx.items
+            }).then(console.log("SENT"))
+        }
 
     return ( 
         <>
@@ -41,10 +54,13 @@ const Cart = (props) => {
                 <span>Total Amount</span>
                 <span>{Amount}</span>
             </div>
+            {isCheckout && <Checkout onCacnel={props.onHideCart} onOrderClick={orderHandler}/>}
+            {!isCheckout &&
             <div className={classes.actions}>
                 <button className={classes['button--alt']} onClick={props.onHideCart}>Close</button>
-                {checkAmount && <button className={classes.button}>Order</button>}
+                {checkAmount && <button className={classes.button} onClick={onOrder}>Order</button>}
             </div>
+            }
         </Modal>
         </>
      );
