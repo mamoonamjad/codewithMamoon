@@ -4,7 +4,6 @@ import Modal from "../UI/Modal";
 import CartContext from "../Store/CartContext";
 import CartItem from "./CartItem";
 import axiosInstance from "../BaseUrl/axios";
-import axios from "axios";
 import Checkout from "./Checkout";
 
 const Cart = (props) => {

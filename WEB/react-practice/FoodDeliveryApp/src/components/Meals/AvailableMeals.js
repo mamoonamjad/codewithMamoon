@@ -11,7 +11,7 @@ const [error,setError] = useState(false)
 
   useEffect(()=>{
     const fetchMeals = async()=>{
-      const res = await axios.get('/meals.json')
+      await axios.get('/meals.json')
       .then((res)=>{
         const mealList =[];
         for(const key in res.data){
