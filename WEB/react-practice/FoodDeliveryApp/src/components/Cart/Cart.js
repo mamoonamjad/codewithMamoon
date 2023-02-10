@@ -40,10 +40,11 @@ const Cart = (props) => {
             setIsCheckout(true)
         }
 
-        const orderHandler = () =>{
+        const orderHandler = (userData) =>{
 
             axiosInstance.post('order.json',{
-                OrderedItem:cartCtx.items
+                OrderedItem:cartCtx.items,userData
+
             })
             .then(console.log("Hit Sent"));      
         }
