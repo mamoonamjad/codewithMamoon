@@ -2,7 +2,8 @@ const express =require('express');
 const userModel = require('../../models/userModel');
 const router = express.Router();
 const bcrypt = require('bcryptjs')
-
+const jwt = require('jsonwebtoken')
+const config = require('config')
 router.post('/sign-up', async(req,res)=>{
     if(req.body.password !== req.body.confirmPassword){
         return res.send("Password do not match")
@@ -15,8 +16,8 @@ router.post('/sign-up', async(req,res)=>{
     user.name = req.body.name;
     user.email = req.body.email;
 
-    let hashPassword = bcrypt.hash(req.body.password,12)
-    let confirmPassword = bcrypt.hash(req.body.confirmPassword,12)
+    let hashPassword = await bcrypt.hash(req.body.password,12)
+    let confirmPassword = await bcrypt.hash(req.body.confirmPassword,12)
 
     user.password = hashPassword;
     user.confirmPassword = confirmPassword;
@@ -31,7 +32,7 @@ router.post('/sign-in',async(req,res)=>{
     if(!user){
         res.send("Please Register First")
     }
-    let loginPassword = bcrypt.compare(req.body.password,user.password);
+    let loginPassword = await bcrypt.compare(req.body.password,user.password);
     if(!loginPassword){
         res.send("Passwords Do Not Match")
     }
