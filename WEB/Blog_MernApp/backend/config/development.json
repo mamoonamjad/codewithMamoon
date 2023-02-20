@@ -1,0 +1,4 @@
+{
+    "jwt":"SomePrivateKey",
+    "secretKey":"authToken"
+}

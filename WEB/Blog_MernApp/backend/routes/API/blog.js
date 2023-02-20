@@ -8,24 +8,19 @@ router.get('/',async(req,res)=>{
 })
 
 router.get('/:id',async(req,res)=>{
-    const blog = await blogModel.findById(id);
+    const blog = await blogModel.findById(req.params.id);
     res.send(blog);
 })
 
 router.post('/add',async(req,res)=>{
-    const blog = new blogModel();
-    blog.title = req.body.title;
-    blog.date = req.body.date;
-    blog.content = req.body.content;
+    const blog = new blogModel(req.body);
 
     await blog.save()
     res.send(blog)
 })
 
-router.delete(':id/delete', async(req,res)=>{
-    const blog= await blogModel.findByIdAndDelete(id)
-    await blog.save()
-
+router.delete('/delete/:id', async(req,res)=>{
+    const blog= await blogModel.findByIdAndDelete(req.params.id)
     res.send("DELETED")
 })
 

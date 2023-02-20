@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const blogSchema = mongoose.Schema({
     title:String,
-    date: {type:Date},
+    date: String,
     content:String,
 })
 
