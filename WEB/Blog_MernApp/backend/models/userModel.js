@@ -5,10 +5,20 @@ const userModel = mongoose.model('users', mongoose.Schema({
     email:String,
     password:String,
     confirmPassword:String,
-    blog:[{
+    image:String,
+    blogs:[{
         type:mongoose.Types.ObjectId,
         ref:'blogs',
-    }]
+    }],
+    comments:[{
+        type:mongoose.Types.ObjectId,
+        ref:'comments'
+    }],
+    role:
+    {
+        type:String,
+        default:'user'
+    }
 }))
 
 module.exports = userModel;

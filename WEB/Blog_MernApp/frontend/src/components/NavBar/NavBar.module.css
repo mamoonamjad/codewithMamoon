@@ -1,0 +1,26 @@
+.header {
+    display: flex;
+    justify-content: space-around;
+    background-color: black;
+    padding: 1rem;
+  }
+
+  .listItem{
+    padding-right: 20%;
+    padding-top: 0.5rem;
+  }
+.list {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+  
+.list li a{
+    color: aliceblue;
+    text-decoration: none;
+  }
+
+.list a:hover, 
+.list a.active{
+    color: rgb(236, 166, 15);
+}

@@ -4,9 +4,13 @@ const blogSchema = mongoose.Schema({
     title:String,
     date: String,
     content:String,
-    user:[{
+    user:{
         type:mongoose.Types.ObjectId,
-        ref:'user'
+        ref:'users'
+    },
+    comments:[{
+        type:mongoose.Types.ObjectId,
+        ref:'comments'
     }]
 })
 

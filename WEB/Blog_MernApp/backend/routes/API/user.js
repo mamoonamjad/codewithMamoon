@@ -4,26 +4,43 @@ const router = express.Router();
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const config = require('config')
-router.post('/sign-up', async(req,res)=>{
+const upload = require('../../middlewares/multer')
+
+
+router.post('/sign-up',upload.single('image'), async(req,res)=>{
     if(req.body.password !== req.body.confirmPassword){
         return res.send("Password do not match")
       }
     const registeredEmail = await userModel.findOne({email:req.body.email})
     if(registeredEmail){
         res.send("The Email Already Exists")
+        return;
     }
-    let user = new userModel();
-    user.name = req.body.name;
-    user.email = req.body.email;
-
+    const url =req.protocol + '://' + req.get('host')
     let hashPassword = await bcrypt.hash(req.body.password,12)
     let confirmPassword = await bcrypt.hash(req.body.confirmPassword,12)
-
-    user.password = hashPassword;
-    user.confirmPassword = confirmPassword;
-
-    await user.save();
-    res.send(user)
+    if(!req.files){
+        let user = await userModel.create({
+            name:req.body.name,
+            email:req.body.email,
+            password: hashPassword,
+            confirmPassword:confirmPassword,
+        
+        })
+        res.send(user)
+    }
+    else if(req.files){
+        let img =url + '/images/' + req.file.filename
+        let user = await userModel.create({
+            name:req.body.name,
+            email:req.body.email,
+            image:img,
+            password: hashPassword,
+            confirmPassword:confirmPassword,
+        
+        })
+        res.send(user)
+    }
     
 })
 

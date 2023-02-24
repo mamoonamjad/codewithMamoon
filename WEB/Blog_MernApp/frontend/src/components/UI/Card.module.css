@@ -1,0 +1,12 @@
+.card {
+    margin: 10%;
+    margin-top: -5%;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(253, 176, 9, 0.25);
+    border-radius: 14px;
+    background-color: rgb(0, 0, 0);
+    border: 2px solid orange;
+  }
+  .card a{
+    text-decoration: none;
+  }

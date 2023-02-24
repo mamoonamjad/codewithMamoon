@@ -1,0 +1,24 @@
+.background{
+    background-image: url('/public/images/background.jpg');
+    height: 400px; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-size:cover;
+    text-align: center;
+    color: white;
+    padding-top: 8%;
+}
+.background button{
+    padding: 1rem;
+    border-radius: 20px;
+    background-color: rgba(231, 162, 35, 0.842);
+}
+.background button:hover{
+    background-color: rgb(255, 174, 0);
+}
+.border{
+    border-bottom: 2px solid orange;
+}
+.load{
+    text-align: center;
+}
