@@ -45,13 +45,14 @@ router.post('/sign-up',upload.single('image'), async(req,res)=>{
 })
 
 router.post('/sign-in',async(req,res)=>{
+    console.log(req.body)
     let user = await userModel.findOne({email:req.body.email});
     if(!user){
-        res.send("Please Register First")
+        return res.status(403).send("Please Register First")
     }
     let loginPassword = await bcrypt.compare(req.body.password,user.password);
     if(!loginPassword){
-        res.send("Passwords Do Not Match")
+       return res.status(403).send("Passwords Do Not Match")
     }
     let token = jwt.sign({_id:user._id},config.get("jwt"));
     res.cookie('token',token,{expires:new Date(Date.now()+100000)})

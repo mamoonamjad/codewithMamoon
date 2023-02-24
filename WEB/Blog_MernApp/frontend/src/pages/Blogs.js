@@ -1,12 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios'
-import { useParams } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import classes from '../components/UI/styles.module.css'
 
 const Blogs = () => {
+    const location = useLocation();
+    const navigate = useNavigate()
     const params = useParams()
     console.log(params.id)
     const [clickBlog,setClickBlog] = useState({})
+    useEffect(()=>{
+        const token = localStorage.getItem('authToken');
+        if(!token){
+            navigate('/login',{state:{from:location.pathname}})
+        }
+    },[])
     useEffect(()=>{
         const fetchBlog = async()=>{
             const response = await axios.get(`http://localhost:4000/api/blogs/${params.id}`)

@@ -37,15 +37,21 @@ export default LoginForm;
 
 export async function action({request}){
     const data = await request.formData();
-
     const user = {
         email:data.get('email'),
         password:data.get('password'),
     }
-    const res = await axios.post('http://localhost:4000/api/auth/sign-in',user);
-    console.log(res)
-    localStorage.setItem('authToken',res.data)
-    return redirect('/')
+    axios.post('http://localhost:4000/api/auth/sign-in',user)
+    .then((res)=>{
+        console.log(res)
+        localStorage.setItem('authToken',res.data);
+        return redirect('/')
+    }).catch((err)=>{
+        console.log(err);
+        return redirect('/login')
+    })
+    return null
+
 }
 
 export function checkAuthLoader(){

@@ -9,6 +9,7 @@ const NavBar= () => {
 
     const logoutHandler=()=>{
         localStorage.removeItem('authToken')
+        redirect('/')
         window.location.reload(true)
     }
 
