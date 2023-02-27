@@ -5,7 +5,7 @@ import Blogs from './pages/Blogs';
 import HomePage from './pages/HomePage';
 import Login from './pages/Login';
 import RootLayout from './pages/RootLayout';
-import { action as loginAction} from './components/Form/LoginForm'
+import AddBlog from './pages/AddBlog'
 import SignUpForm, {action as RegisterAction} from './components/Form/SignUpForm'
 
 
@@ -19,9 +19,10 @@ const router = createBrowserRouter([
     element:<RootLayout />,
     children:[
       {index:true, element:<HomePage/>},
+      {path:'/add-blog' , element:<AddBlog/>},
       {path:'/blogs/:id' ,element:<Blogs/>},
       {path:'/about',element:<About/>},
-      {path:'/login',element:<Login/>,action:loginAction},
+      {path:'/login',element:<Login/>},
       {path:'/register',element:<SignUpForm/>  ,action:RegisterAction}
     ]
 }

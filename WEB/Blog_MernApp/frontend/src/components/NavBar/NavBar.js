@@ -1,18 +1,16 @@
 import {NavLink, redirect } from 'react-router-dom';
-import {useState} from 'react'
 import classes from './NavBar.module.css';
+import { useNavigate } from 'react-router-dom';
 
 const NavBar= () => {
-
-    const [isLoggedIn,setIsLoggedIn] = useState(false)
+    const navigate  = useNavigate()
     const token = localStorage.getItem('authToken');
 
     const logoutHandler=()=>{
         localStorage.removeItem('authToken')
-        redirect('/')
-        window.location.reload(true)
+        navigate('/')
+        window.location.reload()
     }
-
   return (
     <header className={classes.header}>
             <div className={classes.image}>

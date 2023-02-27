@@ -1,11 +1,10 @@
 import axios from 'axios';
 import React from 'react';
-import { Form, redirect, useActionData,Link } from 'react-router-dom';
+import { Form, redirect, Link } from 'react-router-dom';
 import classes from "./SignUpForm.module.css"
 
 const SignUpForm = () => {
     
-    const data = useActionData();
     return ( 
         <>
             <div className={classes.back}>
@@ -57,8 +56,8 @@ export async function action({request}){
         password: data.get('password'),
         confirmPassword: data.get('confirmPassword'),
     }
-    const res = await axios.post('http://localhost:4000/api/auth/sign-up',userData);
-    return redirect('/')
+    await axios.post('http://localhost:4000/api/auth/sign-up',userData);
+    return redirect('/login')
 
 }
 

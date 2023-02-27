@@ -15,6 +15,7 @@ const Blogs = () => {
             navigate('/login',{state:{from:location.pathname}})
         }
     },[])
+    
     useEffect(()=>{
         const fetchBlog = async()=>{
             const response = await axios.get(`http://localhost:4000/api/blogs/${params.id}`)

@@ -54,7 +54,7 @@ router.post('/sign-in',async(req,res)=>{
     if(!loginPassword){
        return res.status(403).send("Passwords Do Not Match")
     }
-    let token = jwt.sign({_id:user._id},config.get("jwt"));
+    let token = jwt.sign({_id:user._id, picture:user.image, name:user.name},config.get("jwt"));
     res.cookie('token',token,{expires:new Date(Date.now()+100000)})
     res.send(token);
 })

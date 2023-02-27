@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios'
 import HomeBlogList from './HomeBlogList';
 import Card from '../../components/UI/Card'
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Homelayout = () => {
   const [userblogs,setUserBlogs] = useState([])
@@ -12,7 +12,7 @@ const Homelayout = () => {
   useEffect(()=>{
   const fetchBlogs = async()=>{
 
-      const response = await axios.get('http://localhost:4000/api/blogs')
+      await axios.get('http://localhost:4000/api/blogs')
       .then((response)=>{
           setUserBlogs(response.data)
           setIsLoading(false)
@@ -24,6 +24,7 @@ const Homelayout = () => {
 
   const blogList = userblogs.map(blog=>
       <HomeBlogList
+      user_ID={blog.user}
       ID={blog._id}
       title={blog.title}
       date={blog.date}
@@ -36,7 +37,7 @@ const Homelayout = () => {
           <div className={classes.background}>
             <h1>Welcome To The Hub of Content</h1>
             <div className='d-flex justify-content-center p-2'>  
-                <button>Add A Blog</button>
+                <Link to={'/add-blog'}> <button>Add A Blog</button> </Link>
           </div>
           </div>
           {isLoading && <p className={classes.load}>Loading...</p>}
